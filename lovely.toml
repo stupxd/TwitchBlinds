@@ -26,6 +26,29 @@ if self.ability and self.ability.twbl_state_prevent_action then return end
 match_indent = true
 overwrite = false
 
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = '''{n=G.UIT.R, config={id = 'blind_extras', align = "cm"}, nodes={'''
+position = "after"
+payload = '''
+TW_BL.MODIFIERS.get_blind_modifier_select_line(type, run_info),
+'''
+match_indent = true
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''function reset_blinds()'''
+position = "after"
+payload = '''
+TW_BL.MODIFIERS.emplace()
+'''
+match_indent = true
+overwrite = false
+
+
 # WIP
 # [[patches]]
 # [patches.pattern]

@@ -5,6 +5,11 @@ return {
 				name = "Chat Booster",
 				text = { "Chat can interact", "inside this booster pack" },
 			},
+
+			twbl_blind_modifier = {
+				"Hello? Please!",
+				"Work, please!",
+			},
 		},
 		Blind = {
 			bl_twbl_twitch_chat = {
@@ -125,6 +130,15 @@ return {
 			bl_twbl_plum_hammer = {
 				name = "Plum Hammer",
 				text = { "Chat can add or remove", "debuff on Jokers" },
+			},
+		},
+		TWBLModifier = {
+			twblm_twbl_test = {
+				name = "Test Modifier",
+				text = {
+					"My first modifier btw.",
+					"Let's create brand new mechanic!",
+				},
 			},
 		},
 	},

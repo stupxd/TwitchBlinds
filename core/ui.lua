@@ -403,6 +403,154 @@ function twbl_init_ui()
 		UI.waiting_for_chat.element.states.visible = false
 	end
 
+	function UI.get_blind_modifier_select_line_definition()
+		local item = UIBox({
+			definition = {
+				n = G.UIT.ROOT,
+				config = {
+					align = "cm",
+					colour = HEX("8e15ad"),
+					padding = 0.1,
+					r = 0.05,
+					minw = 2.5,
+					emboss = 0.05,
+					id = "twbl_blind_modifier",
+				},
+				nodes = {
+					{
+						n = G.UIT.O,
+						config = {
+							object = DynaText({
+								string = "Chat game modifier",
+								colours = { G.C.UI.TEXT_LIGHT },
+								shadow = true,
+								float = true,
+								bump = true,
+								y_offset = -1,
+								scale = 0.3,
+							}),
+						},
+					},
+				},
+			},
+			config = {},
+		})
+		local result = {
+			n = G.UIT.R,
+			config = {
+				align = "cm",
+			},
+			nodes = {
+				{
+					n = G.UIT.R,
+					config = { padding = 0.1 },
+				},
+				{
+					n = G.UIT.O,
+					config = {
+						object = item,
+					},
+				},
+				{
+					n = G.UIT.R,
+					config = { padding = 0.1 },
+				},
+			},
+		}
+		-- item.hover = function()
+		-- 	local desc_nodes = {}
+		-- 	item.config.h_popup = {
+		-- 		n = G.UIT.ROOT,
+		-- 		config = { align = "cm", colour = G.C.CLEAR },
+		-- 		nodes = {
+		-- 			{
+		-- 				n = G.UIT.C,
+		-- 				config = { align = "cm" },
+		-- 				nodes = {
+		-- 					{
+		-- 						n = G.UIT.R,
+		-- 						config = {
+		-- 							padding = 0.05,
+		-- 							r = 0.12,
+		-- 							colour = lighten(G.C.JOKER_GREY, 0.5),
+		-- 							emboss = 0.07,
+		-- 						},
+		-- 						nodes = {
+		-- 							{
+		-- 								n = G.UIT.R,
+		-- 								config = {
+		-- 									align = "cm",
+		-- 									padding = 0.07,
+		-- 									r = 0.1,
+		-- 									colour = adjust_alpha(G.C.BLACK, 0.8),
+		-- 								},
+		-- 								nodes = {
+		-- 									{
+		-- 										n = G.UIT.R,
+		-- 										config = { align = "cm", padding = 0.1 },
+		-- 										nodes = {
+		-- 											{
+		-- 												n = G.UIT.T,
+		-- 												config = {
+		-- 													text = "Chat game modifier",
+		-- 													colour = G.C.WHITE,
+		-- 													scale = 0.4,
+		-- 													shadow = true,
+		-- 												},
+		-- 											},
+		-- 										},
+		-- 									},
+		-- 									{
+		-- 										n = G.UIT.R,
+		-- 										config = {
+		-- 											align = "cm",
+		-- 											padding = 0.05,
+		-- 											r = 0.1,
+		-- 											colour = G.C.WHITE,
+		-- 											emboss = 0.05,
+		-- 										},
+		-- 										nodes = {
+		-- 											-- desc_from_rows(localize({
+		-- 											-- 	type = "raw_descriptions",
+		-- 											-- 	set = "Other",
+		-- 											-- 	key = "twbl_blind_modifier",
+		-- 											-- 	nodes = desc_nodes,
+		-- 											-- })),
+		-- 											-- {
+		-- 											-- 	n = G.UIT.R,
+		-- 											-- 	config = { align = "cm", padding = 0.025 },
+		-- 											-- 	nodes = {
+		-- 											-- 		{
+		-- 											-- 			n = G.UIT.T,
+		-- 											-- 			config = {
+		-- 											-- 				text = "Hello?",
+		-- 											-- 				colour = G.C.BLACK,
+		-- 											-- 				scale = 0.3,
+		-- 											-- 			},
+		-- 											-- 		},
+		-- 											-- 	},
+		-- 											-- },
+		-- 										},
+		-- 									},
+		-- 									-- name_from_rows({ "Chat game modifier" }, nil),
+		-- 									-- desc_from_rows({
+		-- 									-- 	"Chat can select modifier",
+		-- 									-- 	"for run during this blind",
+		-- 									-- }),
+		-- 								},
+		-- 							},
+		-- 						},
+		-- 					},
+		-- 				},
+		-- 			},
+		-- 		},
+		-- 	}
+		-- 	item.config.h_popup_config = { align = "mt", offset = { x = 0, y = -0.2 }, parent = item }
+		-- 	Node.hover(item)
+		-- end
+		return result
+	end
+
 	-- Events
 	------------------------------
 
